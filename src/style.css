@@ -3,9 +3,14 @@ body {
 }
 
 h1 {
+  margin-bottom: 2px;
   color: #202124;
   font-size: 22px;
   line-height: 26px;
+}
+
+p {
+  margin-bottom: 0;
 }
 
 ul {
@@ -16,15 +21,11 @@ ul {
 li {
   list-style: none;
   margin: 0;
+  margin-bottom: 2px;
   padding: 0;
   color: #70757a;
   font-size: 16px;
   line-height: 20px;
-}
-
-img {
-  height: 60px;
-  width: 60px;
 }
 
 .outline-wrapper {
@@ -40,4 +41,31 @@ img {
 
 .headcity {
   text-align: end;
+}
+
+.weather-wrapper img {
+  margin-right: 10px;
+  height: 64px;
+  width: 64px;
+  vertical-align: middle;
+}
+
+.weather-wrapper strong {
+  font-size: 64px;
+  color: #202124;
+  vertical-align: middle;
+}
+
+.weather-wrapper .units {
+  position: relative;
+  top: -15px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 6px;
+  padding-left: 6px;
+}
+
+.units a {
+  color: #202124;
+  text-decoration: none;
 }
