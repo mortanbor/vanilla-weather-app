@@ -39,19 +39,24 @@ li {
   border-radius: 10px;
 }
 
+.cover-block {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .headcity {
   text-align: end;
 }
 
 .weather-wrapper img {
   margin-right: 10px;
-  height: 64px;
-  width: 64px;
+  height: 60px;
+  width: 60px;
   vertical-align: middle;
 }
 
 .weather-wrapper strong {
-  font-size: 64px;
+  font-size: 60px;
   color: #202124;
   vertical-align: middle;
 }
@@ -68,4 +73,8 @@ li {
 .units a {
   color: #202124;
   text-decoration: none;
+}
+
+.description-weather {
+  text-transform: capitalize;
 }

@@ -10,6 +10,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather</title>
   </head>
@@ -18,31 +19,30 @@
       <div class="outline-wrapper">
         <div class="outline">
           <div class="row align-items-center">
-            <div class="col">
+            <div class="col-4 cover-block">
               <p class="weather-wrapper">
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                   alt="Sunny"
                 />
-                <strong>18</strong>
+                <strong id="temper"></strong>
                 <span class="units">
                   <a href="#" id="c-link">°C</a> |
                   <a href="#" id="f-link">°F</a>
                 </span>
               </p>
             </div>
-            <div class="col-3">
+            <div class="col-3 cover-block">
               <ul>
-                <li>Humidity: 0%</li>
-                <li>Wind: 0 km/h</li>
-                <li>Precipitaion: 0%</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
-            <div class="col headcity">
-              <h1>Kyiv</h1>
+            <div class="col headcity cover-block">
+              <h1 id="headcity"></h1>
               <ul>
                 <li>Saturday 22:59</li>
-                <li>Clear</li>
+                <li class="description-weather" id="description"></li>
               </ul>
             </div>
           </div>
