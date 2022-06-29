@@ -70,8 +70,12 @@ li {
 }
 
 .units a {
-  color: #202124;
   text-decoration: none;
+}
+
+.weather-wrapper .active {
+  color: #70757a;
+  cursor: default;
 }
 
 .description-weather {
