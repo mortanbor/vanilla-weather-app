@@ -45,6 +45,7 @@ li {
 }
 
 .headcity {
+  margin-right: 15px;
   text-align: end;
 }
 
@@ -80,4 +81,27 @@ li {
 
 .description-weather {
   text-transform: capitalize;
+}
+.weather-forecast {
+  margin-top: 7px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  color: #202124;
+}
+
+.weather-forecast-img {
+  width: 48px;
+}
+
+.weather-forecast-temperature-max {
+  padding-right: 5px;
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-min {
+  font-size: 13px;
+  opacity: 0.6;
 }
