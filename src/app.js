@@ -26,25 +26,27 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
+  /*let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];*/
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-date">${forecastDay.dt}</div>
         <img
-          src="http://openweathermap.org/img/wn/50d@2x.png"
+          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
           alt="Icon weather"
           class="weather-forecast-icon"
           width="40px"
           />
         <div class="weather-forecast-temperature">
-          <span class="weather-forecast-temperature-max">17° </span>
-          <span class="weather-forecast-temperature-min">11°</span>
+          <span class="weather-forecast-temperature-max">${forecastDay.temp.max}° </span>
+          <span class="weather-forecast-temperature-min">${forecastDay.temp.min}°</span>
         </div>
       </div>
   `;
@@ -54,7 +56,13 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(coordinates) {}
+function getForecast(coordinates) {
+  let apiKey = "14a082666cde45212a997627987614d0";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+
+  axios.get(`${apiUrl}`).then(displayForecast);
+}
 
 function showTemperature(response) {
   let temperature = document.querySelector("#temper");
@@ -123,4 +131,3 @@ let celsiusLink = document.querySelector("#cel-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Kyiv");
-displayForecast();
